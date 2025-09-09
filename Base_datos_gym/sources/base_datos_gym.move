@@ -20,6 +20,7 @@ module base_datos_gym::base_datos_gym {
         membresia_activa: bool,
     }
 
+    //Esto del allow lo puse porque me pedia que tenga esto para ignorar que mandaba el ctx porque tenia que ser algo de componsable
     #[allow(lint(self_transfer))]
     public fun crear_gimnacio(ctx: &mut TxContext) {
         let usuarios = vec_map::empty();
