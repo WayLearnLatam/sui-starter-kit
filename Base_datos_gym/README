@@ -1,0 +1,13 @@
+hola
+Hice una base de datos para gimnasios, se puede crear un gym y los usuarios de ese gym, 
+el cual podes aparte de agregar un gym, agregar el usuario, editarlo, borrarlo y actualizar su membresia.
+Usando crear_gimnacio creo el gym luego puedo crear el usuario con agregar_usuario y pasandole la dirección del gym
+un id de usuario, nombre, edad y dni, no paso la membresia porque ese se lo agrego adentro de la funcion porque si lo agrego
+es porque esta en activo, tambien hay un assert que indica si el usuario existe manda una alerta que el id existe.
+Para eliminar un usuario tiene su assert de que si no existe el usuario dira que no existe, si existe paso la dirección del gym y el id del usuario 
+y se eliminara.
+En editar_usaurio tambien tiene la misma alerta de eliminar si no existe el usuario, aca se pasa la dirección del gym
+id de usuario, un nuevo nombre, nueva edad y nuevo dni y remplaza el usuario, removiendolo al usuario usando su key y volviendo a agregar los datos
+y volviendo a insertar al usuario.
+En actualizar_membresia tiene el mismo assert si no existe el usuario, si existe pasa la dirreción del gym, id del usuario y no pasamos
+la membresa ya que en la funcion solo la obtenemos mutable y le decimos que sera igual a la misma pero negada.
