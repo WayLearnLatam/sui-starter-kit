@@ -43,12 +43,12 @@ module base_datos_gym::base_datos_gym {
     }
 
     public fun eliminar_usuario(gym: &mut Gym, id_usuarios:u64) {
-        assert!(!gym.usuarios.contains(&id_usuarios),ID_NO_EXISTE);
+        assert!(gym.usuarios.contains(&id_usuarios),ID_NO_EXISTE);
         gym.usuarios.remove(&id_usuarios);
     }
 
     public fun editar_usuario(gym: &mut Gym, id_usuarios:u64 ,nuevo_nombre:String,nueva_edad:u8, nuevo_dni:u32 ) {
-        assert!(!gym.usuarios.contains(&id_usuarios),ID_NO_EXISTE);
+        assert!(gym.usuarios.contains(&id_usuarios),ID_NO_EXISTE);
         let (_id, mut usuario) = gym.usuarios.remove(&id_usuarios);
         usuario.nombre = nuevo_nombre;
         usuario.edad = nueva_edad;
@@ -57,7 +57,7 @@ module base_datos_gym::base_datos_gym {
     }
 
     public fun actualizar_membresia(gym: &mut Gym, id_usuarios:u64) {
-        assert!(!gym.usuarios.contains(&id_usuarios),ID_NO_EXISTE);
+        assert!(gym.usuarios.contains(&id_usuarios),ID_NO_EXISTE);
         let usuario = gym.usuarios.get_mut(&id_usuarios);
         usuario.membresia_activa = !usuario.membresia_activa; 
     }
